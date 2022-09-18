@@ -48,7 +48,7 @@ export default {
   build: {},
   
   server: {
-    port: 3000,
+    port: 3020,
     host: '0.0.0.0' 
   }
 }
