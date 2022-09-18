@@ -14,8 +14,9 @@ services:
       dockerfile: Dockerfile
     container_name: nuxt_app
     deploy:
-      replicas: 5
-      condition: on-failure
+      replicas: 1
+      restart_policy:
+        condition: on-failure
     ports:
       - "3020:3020"
 
