@@ -1,17 +1,23 @@
 <template>
-  <div>test</div>
+  <div>docPageDataShort</div>
 </template>
 
 <script lang="ts">
 import { data } from 'browserslist'
 import Vue from 'vue'
-import {docPageData} from './documentPageData/data'
+import {docPageDataShort, docPageData} from './documentPageData/data'
 
 export default Vue.extend({
   name: 'IndexPage',
-  mounted() {
-      console.log(docPageData.data.content.docBodyElements.filter(element => element.widgetType === 'para'))
-  },
+  computed:{
+    docPageDataShort(){
+      return docPageDataShort.data.content.docBodyElements
+    },
+    docPageData(){
+      return docPageData.data.content.docBodyElements
+    }
+
+  }
   
 })
 </script>
