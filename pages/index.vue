@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="(element,index) in elements" :key="index">
-      
+      <element-render :element="element" />
     </div>
   </div>
 </template>
