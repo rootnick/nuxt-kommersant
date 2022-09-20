@@ -1,7 +1,6 @@
 <template>
   <div>
-    <DocPageData />
-    <DocPageData2 />
+    {{users}}
   </div>
 </template>
 
@@ -11,6 +10,10 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: "IndexPage",
+  async asyncData({ $http }) {
+    const test = await $http.$get('/api/docPageDataShort')
+    return { users: test }
+  }
 
 })
 </script>
