@@ -1,5 +1,6 @@
 <template>
-    <p class=”doc__text”>{{bodyElements}}</p>
+    <p class=”doc__text” v-html="htmlText">
+    </p>
 </template>
   
 <script>
@@ -13,6 +14,13 @@ export default {
             required: true
         }
     },
+    computed: {
+        htmlText() {
+            return this.bodyElements.reduce((acc, current) => {
+                return acc + current
+            }, '')
+        }
+    }
 }
 </script>
  
