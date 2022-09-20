@@ -8,7 +8,6 @@
     <div v-else class="element_render_text">
       WidgetElement {{element.widgetType}}
     </div>
-    <div>------</div>
   </div>
 
 </template>
@@ -28,7 +27,7 @@ export default {
     isPara() {
       return this.element.widgetType == 'para' ? true : false
     }
-  },
+  }
 }
 </script>
 <style>
