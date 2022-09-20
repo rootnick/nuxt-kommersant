@@ -17,8 +17,16 @@ export default {
     computed: {
         htmlText() {
             return this.bodyElements.reduce((acc, current) => {
+                if (current.tagName) {
+                    return acc + this.generateTag()
+                }
                 return acc + current
             }, '')
+        }
+    },
+    methods: {
+        generateTag() {
+            return 'bla-bla'
         }
     }
 }
