@@ -1,9 +1,7 @@
 <template>
   <div>
     <div v-if="isPara">
-      <p class=”doc__text” v-for="(bodyElement,index) in element.bodyElements" :key="index">
-        <body-element-render :bodyElement="bodyElement" />
-      </p>
+        <text-render :bodyElements="element.bodyElements" />
     </div>
     <div v-else class="element_render_text">
       WidgetElement {{element.widgetType}}
