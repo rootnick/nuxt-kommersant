@@ -1,10 +1,13 @@
-<!-- Please remove this file from your project -->
 <template>
   <div>
-    <p class=”doc__text” v-if="isPara">
-      {{element.bodyElements}}
-    </p>
-    <p class="element_render_text" v-else>WidgetElement {{element.widgetType}}</p>
+    <div v-if="isPara">
+      <p class=”doc__text” v-for="(bodyElement,index) in element.bodyElements" :key="index">
+        <body-element-render :bodyElement="bodyElement" />
+      </p>
+    </div>
+    <div v-else class="element_render_text">
+      WidgetElement {{element.widgetType}}
+    </div>
     <div>------</div>
   </div>
 
@@ -17,14 +20,15 @@ export default {
   name: 'elementRender',
   props: {
     element: {
-      type: Object
+      type: Object,
+      required: true
     }
   },
   computed: {
     isPara() {
       return this.element.widgetType == 'para' ? true : false
     }
-  }
+  },
 }
 </script>
 <style>

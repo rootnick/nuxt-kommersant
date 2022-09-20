@@ -1,7 +1,6 @@
 <template>
     <div>
         <div v-for="(element,index) in elements" :key="index">
-            {{element.widgetType}}
             <element-render :element="element" />
         </div>
     </div>
