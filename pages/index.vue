@@ -1,6 +1,8 @@
 <template>
   <div>
-    {{users}}
+    <div v-for="(element,index) in elements" :key="index">
+      
+    </div>
   </div>
 </template>
 
@@ -11,8 +13,8 @@ import Vue from 'vue'
 export default Vue.extend({
   name: "IndexPage",
   async asyncData({ $http }) {
-    const test = await $http.$get('/api/docPageDataShort')
-    return { users: test }
+    const elements = await $http.$get('/api/docPageDataShort')
+    return { elements }
   }
 
 })

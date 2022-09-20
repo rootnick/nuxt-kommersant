@@ -1,8 +1,10 @@
 <template>
     <div>
-        docPageMorozov
+      <div v-for="(element,index) in elements" :key="index">
+        
+      </div>
     </div>
-</template>
+  </template>
   
 <script lang="ts">
 import { data } from 'browserslist'
@@ -11,8 +13,8 @@ import Vue from 'vue'
 export default Vue.extend({
     name: "documentFull",
     async asyncData({ $http }) {
-        const test = await $http.$get('/api/docPageData')
-        return { users: test }
+        const elements = await $http.$get('/api/docPageData')
+        return { elements }
     }
 
 })
