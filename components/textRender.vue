@@ -18,15 +18,22 @@ export default {
         htmlText() {
             return this.bodyElements.reduce((acc, current) => {
                 if (current.tagName) {
-                    return acc + this.generateTag()
+                    return acc + this.generateTag(current)
                 }
                 return acc + current
             }, '')
         }
     },
     methods: {
-        generateTag() {
-            return 'bla-bla'
+        generateTag(element) {
+            return `<${element.tagName} ${element.attributes?this.genenerateAttributes(element.attributes):''}> 
+                ${element.children} 
+            </${element.tagName}>`
+        },
+        genenerateAttributes(attributes) {
+            return Object.entries(attributes).reduce((acc, current) => {
+                return acc + `${current[0]}=${current[1]}`
+            }, '')
         }
     }
 }
