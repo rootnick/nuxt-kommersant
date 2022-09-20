@@ -3,12 +3,12 @@
   <div
     class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0"
   >
-   morozov
+   morozov2--хухххй
   </div>
 </template>
 
 <script>
 export default {
-  name: 'DocPageData',
+  name: 'DocPageData2',
 }
 </script>
