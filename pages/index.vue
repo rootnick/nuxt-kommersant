@@ -15,5 +15,10 @@ export default Vue.extend({
     const elements = await $http.$get('/api/docPageDataShort')
     return { elements }
   },
+  computed:{
+    isShort(){
+      return (Object.hasOwn(this.$route.query, 'short'))
+    }
+  }
 })
 </script>
