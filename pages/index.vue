@@ -1,5 +1,9 @@
 <template>
   <div>
+    <p>
+      lorem lorem <br />
+      lorem mmmm
+    </p>
     <div v-for="(element, index) in elements" :key="index">
       <element-render :element="element" />
     </div>
@@ -15,10 +19,10 @@ export default Vue.extend({
     const elements = await $http.$get('/api/docPageDataShort')
     return { elements }
   },
-  computed:{
-    isShort(){
-      return (Object.hasOwn(this.$route.query, 'short'))
-    }
-  }
+  computed: {
+    isShort() {
+      return Object.hasOwn(this.$route.query, 'short')
+    },
+  },
 })
 </script>
