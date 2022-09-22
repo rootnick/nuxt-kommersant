@@ -14,20 +14,16 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   components: true,
-  buildModules: [
-    '@nuxt/typescript-build',
-  ],
-  modules: [
-    '@nuxt/http'
-  ],
+  buildModules: ['@nuxt/typescript-build'],
+  modules: ['@nuxt/http'],
   axios: {
     baseURL: '/',
   },
   server: {
     port: 3020,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
   },
   serverMiddleware: {
-    '/api': '~/api'
+    '/api': '~/api',
   },
 }

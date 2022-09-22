@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="isPara">
-      <text-render :bodyElements="element.bodyElements" />
+      <text-render :body-elements="element.bodyElements" />
     </div>
     <div v-else class="element_render_text">
       WidgetElement {{ element.widgetType }}
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'elementRender',
+  name: 'ElementRender',
   props: {
     element: {
       type: Object,
@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     isPara() {
-      return this.element.widgetType == 'para' ? true : false
+      return this.element.widgetType == 'para'
     },
   },
 }

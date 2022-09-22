@@ -1,10 +1,10 @@
 <template>
   <p class="”doc__text”" v-html="htmlText"></p>
 </template>
-  
+
 <script>
 export default {
-  name: 'textRender',
+  name: 'TextRender',
   props: {
     bodyElements: {
       type: Array,
@@ -37,4 +37,3 @@ export default {
   },
 }
 </script>
- 
