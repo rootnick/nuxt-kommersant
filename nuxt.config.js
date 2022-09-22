@@ -25,7 +25,7 @@ export default {
   },
   server: {
     port: 3020,
-    host: '0.0.0.0' 
+    host: '0.0.0.0'
   },
   serverMiddleware: {
     '/api': '~/api'
