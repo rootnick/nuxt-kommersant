@@ -1,13 +1,13 @@
-version: "3.9"
+version: '3.9'
 services:
   nginx:
     image: nginx:1.22-alpine
     container_name: proxy_nginx
     ports:
-      - "80:80"
-      - "443:443"
+      - '80:80'
+      - '443:443'
     volumes:
-      - "./nginx:/etc/nginx/conf.d"
+      - './nginx:/etc/nginx/conf.d'
   nuxt:
     build:
       context: .
@@ -18,6 +18,4 @@ services:
       restart_policy:
         condition: on-failure
     ports:
-      - "3020:3020"
-
-   
+      - '3020:3020'

@@ -3,7 +3,7 @@ import { docPageDataShort, docPageData } from './documentPageData/data.ts'
 
 const app = express()
 
-const getContent = (dataRoot) => dataRoot.data.content.docBodyElements;
+const getContent = (dataRoot) => dataRoot.data.content.docBodyElements
 
 app.get('/docPageDataShort', (req, res) => {
   res.send(getContent(docPageDataShort))
@@ -14,4 +14,3 @@ app.get('/docPageData', (req, res) => {
 })
 
 module.exports = app
-
