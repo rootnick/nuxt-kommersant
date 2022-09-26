@@ -1,5 +1,5 @@
 import express from 'express'
-import { docPageDataShort, docPageData } from './documentPageData/data.ts'
+import { docPageDataShort, docPageData } from '../static/data.ts'
 
 const app = express()
 

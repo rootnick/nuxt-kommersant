@@ -1,20 +1,28 @@
 <template>
   <div>
-    <div v-for="(element, index) in elements" :key="index">
+    morozov
+    <!-- <div v-for="(element, index) in elements" :key="index">
       <element-render :element="element" />
-    </div>
+    </div> -->
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
+import { docPageData, docPageDataShort } from '~/static/data'
 
 export default Vue.extend({
   name: 'IndexPage',
-  computed: {
-    isShort() {
-      return Object.hasOwn(this.$route.query, 'short')
-    },
+  asyncData({ query }) {
+    if (Object.hasOwn(query, 'short')) {
+      return docPageDataShort
+    }
+    return docPageData
   },
+  computed:{
+    dataDocBodyElements(){
+      return this.data.content.docBodyElements
+    }
+  }
 })
 </script>
