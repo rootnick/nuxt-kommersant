@@ -7,22 +7,26 @@
   </div>
 </template>
 
-<script>
-import Vue from 'vue'
+<script lang='ts'>
 import { docPageData, docPageDataShort } from '~/static/data'
+import type { ArticleLong } from '~/static/types'
+import Vue from 'vue'
 
 export default Vue.extend({
   name: 'IndexPage',
-  asyncData({ query }) {
-    if (Object.hasOwn(query, 'short')) {
+  async asyncData({ route }) {
+    if (Object.hasOwn(route.query, 'short')) {
       return docPageDataShort
     }
     return docPageData
   },
-  computed:{
-    dataDocBodyElements(){
+  data() {
+    return {} as ArticleLong.IArticleLong
+  },
+  computed: {
+    docBodyElements(): ArticleLong.DocBodyElement[] {
       return this.data.content.docBodyElements
-    }
-  }
+    },
+  },
 })
 </script>
