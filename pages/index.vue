@@ -1,16 +1,15 @@
 <template>
-  <div>
-    morozov
-    <!-- <div v-for="(element, index) in elements" :key="index">
-      <element-render :element="element" />
-    </div> -->
-  </div>
+  <fragment>
+    <div v-for="(element, index) in docBodyElements" :key="index">
+      {{ element }}
+    </div>
+  </fragment>
 </template>
 
 <script lang='ts'>
+import Vue from 'vue'
 import { docPageData, docPageDataShort } from '~/static/data'
 import type { ArticleLong } from '~/static/types'
-import Vue from 'vue'
 
 export default Vue.extend({
   name: 'IndexPage',

@@ -15,11 +15,11 @@ export default {
   },
   components: true,
   buildModules: ['@nuxt/typescript-build'],
-  axios: {
-    baseURL: '/',
-  },
   server: {
     port: 3020,
     host: '0.0.0.0',
   },
+  plugins: [
+    { src: '~/plugins/vue-fragment.js', mode: 'client' }
+  ]
 }
