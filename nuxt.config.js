@@ -15,7 +15,6 @@ export default {
   },
   components: true,
   buildModules: ['@nuxt/typescript-build'],
-  modules: ['@nuxt/http'],
   axios: {
     baseURL: '/',
   },
