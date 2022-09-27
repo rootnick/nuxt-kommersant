@@ -8,7 +8,7 @@ export default Vue.extend({
   props: {
     bodyElements: {
       type: Array,
-      required: true,
+      required: false,
     },
   },
 })
