@@ -1,7 +1,7 @@
 <template>
   <p class="doc__text">
-    <template v-for="(element) in bodyElements">
-     {{element}}
+    <template v-for="(element, index) in bodyElements">
+      <simpleText :key="index" :text="element"/>
     </template>
   </p>
 </template>
