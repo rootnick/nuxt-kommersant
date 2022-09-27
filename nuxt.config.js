@@ -15,15 +15,8 @@ export default {
   },
   components: true,
   buildModules: ['@nuxt/typescript-build'],
-  modules: ['@nuxt/http'],
-  axios: {
-    baseURL: '/',
-  },
   server: {
     port: 3020,
     host: '0.0.0.0',
-  },
-  serverMiddleware: {
-    '/api': '~/api',
   },
 }
