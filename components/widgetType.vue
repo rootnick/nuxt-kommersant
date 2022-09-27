@@ -1,5 +1,5 @@
 <template>
-  <div>{{element}}</div>
+  <div>{{ element }}</div>
 </template>
 <script lang='ts'>
 import Vue from 'vue'
