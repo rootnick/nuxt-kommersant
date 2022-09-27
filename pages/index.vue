@@ -1,22 +1,21 @@
 <template>
   <div>
     <div v-for="(element, index) in docBodyElements" :key="index">
-      {{ defineWidgetType(element) }}
-      <!-- <component :is="defineWidgetType(element)"></component> -->
+      <widgetType :element="element" />
     </div>
   </div>
 </template>
 
 <script lang='ts'>
 import Vue from 'vue'
-import defaultWidgetType from '~/components/widgetTypes/defaultWidgetType.vue'
+import widgetType from '~/components/widgetType.vue'
 import { docPageData, docPageDataShort } from '~/static/data'
 import type { ArticleLong } from '~/static/types'
 
 export default Vue.extend({
   name: 'IndexPage',
   components: {
-    defaultWidgetType,
+    widgetType,
   },
   async asyncData({ route }) {
     if (Object.hasOwn(route.query, 'short')) {
@@ -30,11 +29,6 @@ export default Vue.extend({
   computed: {
     docBodyElements(): ArticleLong.DocBodyElement[] {
       return this.data.content.docBodyElements
-    },
-  },
-  methods: {
-    defineWidgetType(element: ArticleLong.DocBodyElement) {
-      //
     },
   },
 })
