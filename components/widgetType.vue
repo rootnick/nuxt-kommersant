@@ -1,5 +1,7 @@
 <template>
-  <component :is="typeComponent">{{ element.widgetType }}</component>
+  <component :is="typeComponent" :bodyElements="element.bodyElements">{{
+    element.widgetType
+  }}</component>
 </template>
 <script lang='ts'>
 import Vue from 'vue'
