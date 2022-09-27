@@ -1,26 +1,32 @@
 <template>
-  <div>{{ type() }}</div>
+  <component :is="typeComponent"></component>
 </template>
 <script lang='ts'>
 import Vue from 'vue'
 import type { ArticleLong } from '~/static/types'
+import paraWidgetType from './widgetType/paraWidgetType.vue'
+import defaultWidgetType from './widgetType/defaultWidgetType.vue'
 export default Vue.extend({
   name: 'widgetType',
+  components: {
+    paraWidgetType,
+    defaultWidgetType,
+  },
   props: {
     element: {
       type: Object as () => ArticleLong.DocBodyElement,
       required: true,
     },
   },
-  methods: {
-    type() {
-      if (this.element instanceof String) {
-        console.log('string')
-      } else if ((this.element as ArticleLong.WidgetElement).widgetType) {
-        console.log('widgetType')
-      } else if ((this.element as ArticleLong.HTMLTagElement).tagName) {
-        console.log('tagName')
+  computed: {
+    typeComponent() {
+      let nameComponent = 'default'
+      if (this.element as ArticleLong.WidgetElement) {
+        if ((this.element as ArticleLong.WidgetElement).widgetType === 'para') {
+          nameComponent = 'para'
+        }
       }
+      return `${nameComponent}WidgetType`
     },
   },
 })

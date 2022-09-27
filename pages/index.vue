@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="index_page">
     <div v-for="(element, index) in docBodyElements" :key="index">
       <widgetType :element="element" />
     </div>
