@@ -5,6 +5,7 @@ import type { ArticleLong } from '~/static/types'
 export default Vue.extend({
   name: 'simpleText',
   render() {
+    // @ts-ignore:next-line
     return this._v(this.text)
   },
   props: {
