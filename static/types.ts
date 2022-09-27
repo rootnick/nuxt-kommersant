@@ -128,8 +128,7 @@ export namespace ArticleLong {
     | Free
     | Socials
 
-  export 
-  type DocBodyElement = PlainTextElement | WidgetElement | HTMLTagElement
+  export type DocBodyElement = PlainTextElement | WidgetElement | HTMLTagElement
 
   export interface IArticleLong {
     dataHash?: string

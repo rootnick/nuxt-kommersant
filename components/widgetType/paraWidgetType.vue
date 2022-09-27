@@ -1,7 +1,13 @@
 <template>
   <p class="doc__text">
     <template v-for="(element, index) in bodyElements">
-      <tagComponent v-if="isTag(element)" :key="index" />
+      <tagComponent
+        v-if="isTag(element)"
+        :key="index"
+        :tagName="element.tagName"
+        :attributes="element.attributes"
+        :children="element.children"
+      />
       <simpleText v-else :key="index" :text="element" />
     </template>
   </p>
