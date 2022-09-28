@@ -22,7 +22,13 @@ $ npm run dev
 ```
 
 # Docker
-Поставить docker compose и запустить
+Поставить docker
+Собрать образ 
+```bash
+$ docker build .
+```
+Поставить docker compose
+Запустить
 
 ```bash
 $ docker-compose up
